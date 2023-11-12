@@ -1,4 +1,4 @@
-package com.kopyshov.cloudfilestorage.model;
+package com.kopyshov.cloudfilestorage.database.entity;
 
 import jakarta.persistence.*;
 
@@ -12,6 +12,8 @@ public class UserData {
     private String username;
     @Column(unique = true, nullable = false)
     private String password;
+    @Column
+    private String role;
     @Column(unique = true, nullable = false)
     private String name;
 
@@ -45,5 +47,13 @@ public class UserData {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
